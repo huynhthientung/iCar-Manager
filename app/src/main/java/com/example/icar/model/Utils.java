@@ -22,6 +22,7 @@ public class Utils {
 
     private static Utils instance;
     private static Customer customer;
+    private static Manager manager;
     private static ArrayList<Service> serviceArrayList = null;
     private static ArrayList<ExtraService> extraServiceArrayList = null;
 //    private static ArrayList<Car> carArrayList;
@@ -49,7 +50,24 @@ public class Utils {
         if (null == customer) {
             initCustomer();
         }
+        if (null == manager) {
+            initManager();
+        }
         //TODO: carArrayList
+    }
+
+    private void initManager() {
+        root.child("Managers").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                manager = snapshot.getValue(Manager.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void initCustomer() {
@@ -146,6 +164,10 @@ public class Utils {
 
     public Customer getCustomer() {
         return customer;
+    }
+
+    public Manager getManager() {
+        return manager;
     }
 
     public static Utils getInstance() {
