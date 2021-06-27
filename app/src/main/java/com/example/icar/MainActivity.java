@@ -70,22 +70,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    private void test() {
-//        DatabaseReference root = FirebaseDatabase.getInstance().getReference();
-//        ExtraService extraService =
-//                new ExtraService("ESK04", "Quay lại điểm lấy hàng", 200000);
-//        root.child("ExtraServices").child(extraService.extraServiceKey).setValue(extraService).addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull @NotNull Task<Void> task) {
-//                if (task.isSuccessful()) {
-//                    Toast.makeText(MainActivity.this, "Thanh cong", Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(MainActivity.this, "That bai", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//    }
-
     private void onSignIn() {
         String email = edtEmail.getText().toString();
         String password = edtPassword.getText().toString();
@@ -96,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(MainActivity.this, "Successfully sign-in", Toast.LENGTH_SHORT).show();
-                    // TODO: move on to dashboard
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
                     finish();
                 } else {

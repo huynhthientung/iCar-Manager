@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.icar.R;
 import com.example.icar.model.Customer;
+import com.example.icar.model.Manager;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -107,9 +108,9 @@ public class UpdateProfileActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show();
         } else {
-            Customer customer = new Customer(uid, name, email, phone, address, birthday, gender);
+            Manager manager = new Manager(uid, name, email, phone, address, birthday, gender);
             databaseReference = FirebaseDatabase.getInstance().getReference();
-            databaseReference.child("Customers").child(uid).setValue(customer)
+            databaseReference.child("Managers").child(uid).setValue(manager)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull @NotNull Task<Void> task) {

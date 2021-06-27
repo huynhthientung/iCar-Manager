@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/edittext_background"
-            android:hint="@string/driver"
+            android:hint="@string/manager"
             android:textSize="30sp"
             android:textStyle="bold"
             android:layout_marginStart="50dp"
