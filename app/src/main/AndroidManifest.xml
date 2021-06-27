@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.icar">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ICar">
+        <activity
+            android:name=".activity.ServiceActivity"
+            android:label="@string/title_ServiceLookup"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:label="@string/title_AboutUs"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
+            android:name=".activity.LicenseActivity"
+            android:label="@string/title_License"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
+            android:name=".feedback.FeedbackActivity"
+            android:label="@string/title_Feedback"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.ICar.NoActionBar" />
+        <activity
+            android:name=".activity.ForgetPasswordActivity"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
+            android:name=".activity.UpdateProfileActivity"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity android:name=".activity.SignUpActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

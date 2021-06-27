@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">iCar-Driver</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Trang chủ</string>
+    <string name="menu_profile">Thông tin cá nhân</string>
+    <string name="menu_transaction">Giao dịch</string>
+    <string name="menu_history">Lịch sử</string>
+    <string name="menu_share">Chia sẻ</string>
+    <string name="menu_send">Gửi email</string>
+    <string name="menu_logout">Đăng xuất</string>
+    <string name="menu_feedback">Góp ý</string>
+    <string name="communication_title">Mở rộng</string>
+
+    <string name="title_Feedback">Gửi đánh giá</string>
+    <string name="title_License">Chính sách vận chuyển</string>
+    <string name="title_AboutUs">Về chúng tôi</string>
+    <string name="title_ServiceLookup">Tra cứu dịch vụ</string>
+
+    <string name="car_booking">Tiến hành đặt xe</string>
+    <string name="car_searching">Tra cứu xe</string>
+    <string name="service_searching">Tra cứu dịch vụ</string>
+    <string name="about_license">Chính sách vận chuyển</string>
+    <string name="about_us">Về chúng tôi</string>
+    <string name="welcome">Chào mừng bạn đến với iCar-Driver</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="show_password">Hiện mật khẩu</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="sign_up">Đăng ký</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+    <string name="send">Gửi</string>
+    <string name="please_enter_your_email_to_reset_password">Vui lòng nhập email để khôi phục mật khẩu</string>
+    <string name="reset_password">Khôi phục mật khẩu</string>
+    <string name="select_view_service_option">Chọn loại dịch vụ</string>
+    <string name="full_name">Họ và tên</string>
+    <string name="driver">Driver</string>
+
+
+
+    <string-array name="options_service_array">
+        <item>Bảng giá</item>
+        <item>Dịch vụ thêm</item>
+    </string-array>
+
+</resources>
