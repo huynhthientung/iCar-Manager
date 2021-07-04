@@ -245,6 +245,10 @@ public class Utils {
         return customerArrayList;
     }
 
+    public void setDriverArrayList(ArrayList<Driver> driverArrayList) {
+        Utils.driverArrayList = driverArrayList;
+    }
+
     public void setCarArrayList(ArrayList<Car> carArrayList) {
         Utils.carArrayList = carArrayList;
     }
@@ -268,6 +272,7 @@ public class Utils {
     public Customer getCustomer() {
         return customer;
     }
+
 
     public String getDriverName(String uid) {
         root.child("Drivers").addChildEventListener(new ChildEventListener() {

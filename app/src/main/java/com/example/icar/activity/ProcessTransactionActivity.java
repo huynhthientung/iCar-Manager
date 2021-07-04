@@ -65,6 +65,8 @@ public class ProcessTransactionActivity extends AppCompatActivity {
 //        }
         bookingKey = getIntent().getExtras().getString(TAG);
 //        Toast.makeText(this, "" + bookings.toString(), Toast.LENGTH_SHORT).show();
+        Utils.getInstance().setCarArrayList(null);
+        Utils.getInstance().setDriverArrayList(null);
         carArrayList = Utils.getInstance().getCarArrayList();
         driverArrayList = Utils.getInstance().getDriverArrayList();
         txtDetails = findViewById(R.id.textView_car_details);
@@ -135,6 +137,7 @@ public class ProcessTransactionActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     if (task.isSuccessful()) {
+                                        root.child("Drivers").child(spliter[1]).child("TrangThai").setValue(true);
                                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                         finish();
                                     } else {
