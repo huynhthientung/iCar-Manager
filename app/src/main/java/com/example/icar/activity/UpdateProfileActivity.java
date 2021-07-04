@@ -202,11 +202,11 @@ public class UpdateProfileActivity extends AppCompatActivity {
     private void initializeViews() {
         imgView = findViewById(R.id.imageView);
         btnPickPhoto = findViewById(R.id.buttonPick);
-        btnUpdate = findViewById(R.id.buttonUpdate);
-        edtName = findViewById(R.id.editTextTextPersonName);
-        edtEmail = findViewById(R.id.editTextTextEmailAddress);
-        edtPhone = findViewById(R.id.editTextPhone);
-        edtAddress = findViewById(R.id.editTextTextAddress);
+        btnUpdate = findViewById(R.id.buttonAdd);
+        edtName = findViewById(R.id.editTextText_BienSo);
+        edtEmail = findViewById(R.id.editText_MauSac);
+        edtPhone = findViewById(R.id.editText_HangXe);
+        edtAddress = findViewById(R.id.editText_TrongTai);
         edtBirthday = findViewById(R.id.editTextDate);
         rgGender = findViewById(R.id.radioGroup);
         rbMale = findViewById(R.id.radioButtonMale);

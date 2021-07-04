@@ -33,6 +33,7 @@ public class CarSearchingActivity extends AppCompatActivity {
         adapter.setCarArrayList(carArrayList);
         recyclerView_car.setLayoutManager(new LinearLayoutManager(this));
         recyclerView_car.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

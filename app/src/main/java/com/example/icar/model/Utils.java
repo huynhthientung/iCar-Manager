@@ -5,6 +5,8 @@ import android.net.Uri;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -84,6 +86,7 @@ public class Utils {
 
             }
         });
+
     }
 
     private void initCustomer() {
@@ -162,6 +165,10 @@ public class Utils {
 
     public ArrayList<Car> getCarArrayList() {
         return carArrayList;
+    }
+
+    public void setCarArrayList(ArrayList<Car> carArrayList) {
+        Utils.carArrayList = carArrayList;
     }
 
     public ArrayList<Service> getServiceArrayList() {

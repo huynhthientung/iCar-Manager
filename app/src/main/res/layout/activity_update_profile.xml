@@ -52,7 +52,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextText_BienSo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -68,10 +68,10 @@
         android:layout_marginTop="16dp"
         android:text="Email"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText_BienSo" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editText_MauSac"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -87,7 +87,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/phone"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_MauSac" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -97,7 +97,7 @@
         app:layout_constraintGuide_begin="383dp" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/editText_HangXe"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -113,10 +113,10 @@
         android:layout_marginTop="16dp"
         android:text="@string/address"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_HangXe" />
 
     <EditText
-        android:id="@+id/editTextTextAddress"
+        android:id="@+id/editText_TrongTai"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -132,7 +132,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/birthday"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editText_TrongTai" />
 
     <EditText
         android:id="@+id/editTextDate"
@@ -180,7 +180,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     <Button
-        android:id="@+id/buttonUpdate"
+        android:id="@+id/buttonAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
