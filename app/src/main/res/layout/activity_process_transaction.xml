@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".activity.ProcessTransactionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView_car_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="text"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Chọn tài xế "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_PickedDriver"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Bạn chưa chỉ định tài xế !"
+            android:textColor="#0E45E8"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listView_driver"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/textView222"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Chọn xe "
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_PickedCar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Bạn chưa chỉ định xe !"
+            android:textColor="#0E45E8"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/listView_car"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="5dp" />
+
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/confirm"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+
+</ScrollView>

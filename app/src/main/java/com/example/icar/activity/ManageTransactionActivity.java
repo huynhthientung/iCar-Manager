@@ -29,6 +29,7 @@ import java.util.ArrayList;
 
 public class ManageTransactionActivity extends AppCompatActivity {
 
+    private final String TAG = "BOOKINGS";
     private ListView lvBookings;
     private ArrayList<String> bookingsArrayList;
     private DatabaseReference root;
@@ -80,7 +81,7 @@ public class ManageTransactionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(ManageTransactionActivity.this, "" + bookingsArrayList.get(position), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ManageTransactionActivity.this, ProcessTransactionActivity.class);
-                intent.putExtra("BOOKINGS", new Gson().toJson(bookings));
+                intent.putExtra(TAG, new Gson().toJson(bookings));
                 startActivity(intent);
                 finish();
             }
