@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ICar">
         <activity
+            android:name=".activity.BookingActivity"
+            android:label="@string/title_Booking"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
             android:name=".activity.ServiceActivity"
             android:label="@string/title_ServiceLookup"
             android:theme="@style/Theme.ICarActionBar" />
@@ -30,10 +34,12 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ICar.NoActionBar" />
         <activity
+            android:label="@string/title_ForgetPassword"
             android:name=".activity.ForgetPasswordActivity"
             android:theme="@style/Theme.ICarActionBar" />
         <activity
             android:name=".activity.UpdateProfileActivity"
+            android:label="@string/title_UpdateProfile"
             android:theme="@style/Theme.ICarActionBar" />
         <activity android:name=".activity.SignUpActivity" />
         <activity android:name=".MainActivity">

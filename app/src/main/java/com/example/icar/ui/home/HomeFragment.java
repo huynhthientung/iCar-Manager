@@ -1,4 +1,4 @@
-package com.example.icar.home_ui.home;
+package com.example.icar.ui.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.icar.activity.AboutUsActivity;
+import com.example.icar.activity.BookingActivity;
 import com.example.icar.activity.LicenseActivity;
 import com.example.icar.R;
 import com.example.icar.activity.ServiceActivity;
@@ -22,7 +23,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private ImageView imageView;
-    private CardView cardView_booking, cardView_car, cardView_service, cardView_license, cardView_about;
+    private CardView cardView_booking, cardView_service, cardView_license, cardView_about;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,7 +36,6 @@ public class HomeFragment extends Fragment {
         // init controls
         cardView_about = binding.cardViewAboutUs;
         cardView_booking = binding.cardViewBooking;
-        cardView_car = binding.cardViewCarSearching;
         cardView_license = binding.cardViewLicense;
         cardView_service = binding.cardViewServiceSearching;
         
@@ -61,13 +61,6 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        cardView_car.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                carSearching_onClick();
-            }
-        });
-
         cardView_booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,12 +71,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void carBooking_onClick() {
-        Toast.makeText(getContext(), "Car Booking", Toast.LENGTH_SHORT).show();
-    }
-
-    private void carSearching_onClick() {
-        Toast.makeText(getContext(), "Car searching", Toast.LENGTH_SHORT).show();
-
+//        Toast.makeText(getContext(), "Car Booking", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getContext(), BookingActivity.class));
     }
 
     private void license_onClick() {

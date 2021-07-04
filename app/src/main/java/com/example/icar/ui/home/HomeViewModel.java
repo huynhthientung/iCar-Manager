@@ -1,4 +1,4 @@
-package com.example.icar.home_ui.home;
+package com.example.icar.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

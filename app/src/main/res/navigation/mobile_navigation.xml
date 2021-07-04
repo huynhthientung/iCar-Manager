@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.icar.home_ui.profile.ProfileFragment"
+        android:name="com.example.icar.ui.profile.ProfileFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.icar.home_ui.home.HomeFragment"
+        android:name="com.example.icar.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/nav_transaction"
-        android:name="com.example.icar.home_ui.transaction.TransactionFragment"
+        android:name="com.example.icar.ui.transaction.TransactionFragment"
         android:label="@string/menu_transaction"
         tools:layout="@layout/fragment_transaction" />
     <fragment
         android:id="@+id/nav_history"
-        android:name="com.example.icar.home_ui.history.HistoryFragment"
+        android:name="com.example.icar.ui.history.HistoryFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
 

@@ -114,8 +114,10 @@ public class HomeActivity extends AppCompatActivity {
 //                switch (item.getItemId()) {
 //                    case R.id.nav_share:
 //                        Toast.makeText(HomeActivity.this, "Share", Toast.LENGTH_SHORT).show();
+//                        //TODO: handle later
 //                        break;
 //                    case R.id.nav_send:
+//                        //TODO: handle later
 //                        Toast.makeText(HomeActivity.this, "Send", Toast.LENGTH_SHORT).show();
 //                        break;
 //                    case R.id.nav_logout:

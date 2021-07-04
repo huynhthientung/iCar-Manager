@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">iCar-Manager</string>
+    <string name="app_name">iCar-Customer</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -22,14 +22,16 @@
     <string name="title_License">Chính sách vận chuyển</string>
     <string name="title_AboutUs">Về chúng tôi</string>
     <string name="title_ServiceLookup">Tra cứu dịch vụ</string>
+    <string name="title_Booking">Đặt xe</string>
+    <string name="title_ForgetPassword">Quên mật khẩu</string>
+    <string name="title_UpdateProfile">Cập nhật thông tin cá nhân</string>
 
     <string name="car_booking">Tiến hành đặt xe</string>
     <string name="car_searching">Tra cứu xe</string>
     <string name="service_searching">Tra cứu dịch vụ</string>
     <string name="about_license">Chính sách vận chuyển</string>
     <string name="about_us">Về chúng tôi</string>
-    <string name="welcome">Chào mừng bạn đến với iCar-Driver</string>
-    <string name="email">Email</string>
+    <string name="welcome">Chào mừng bạn đến với iCar</string>
     <string name="password">Mật khẩu</string>
     <string name="show_password">Hiện mật khẩu</string>
     <string name="sign_in">Đăng nhập</string>
@@ -39,9 +41,49 @@
     <string name="please_enter_your_email_to_reset_password">Vui lòng nhập email để khôi phục mật khẩu</string>
     <string name="reset_password">Khôi phục mật khẩu</string>
     <string name="select_view_service_option">Chọn loại dịch vụ</string>
+    <string name="take_a_photo">Chụp ảnh</string>
+    <string name="update">Cập nhật</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
+
+    <string name="email">Email</string>
     <string name="full_name">Họ và tên</string>
-    <string name="driver">Driver</string>
-    <string name="manager">Manager</string>
+    <string name="phone">Điện thoại</string>
+    <string name="address">Địa chỉ</string>
+    <string name="birthday">Ngày tháng năm sinh</string>
+    <string name="gender">Giới tính</string>
+
+    <string name="email_">Email: </string>
+    <string name="full_name_">Họ và tên: </string>
+    <string name="phone_">Điện thoại: </string>
+    <string name="address_">Địa chỉ: </string>
+    <string name="birthday_">Ngày tháng năm sinh: </string>
+    <string name="gender_">Giới tính: </string>
+    <string name="edit_profile">Chỉnh sửa thông tin cá nhân</string>
+
+    <string name="source_place">Điểm đi</string>
+    <string name="province">Tỉnh</string>
+    <string name="detail_address">Địa chỉ cụ thể</string>
+    <string name="destination_place">Điểm đến</string>
+    <string name="select_car_model">Chọn loại xe</string>
+    <string name="add_car_detail">Thêm chi tiết xe</string>
+    <string name="departure_date">Ngày đi</string>
+    <string name="arrival_date">Ngày đến</string>
+    <string name="select_extra_service">Chọn gói dịch vụ thêm</string>
+    <string name="esk01">ESK01 - Phí chờ mỗi giờ 50.000 vnd</string>
+    <string name="eks02">ESK02 - Thêm mỗi điểm dừng 30.000 vnd</string>
+    <string name="eks03">ESK03 - Thêm 01 người bốc hàng 300.000 vnd</string>
+    <string name="eks04">ESK04 - Quay lại điểm lấy hàng 200.000 vnd</string>
+    <string name="receiver_infomation">Thông tin người nhận</string>
+    <string name="receiver_name">Tên người nhận</string>
+    <string name="receiver_phone">SỐ điện thoại người nhận</string>
+    <string name="note">Ghi chú</string>
+    <string name="serch_total">Tra cứu giá tiền</string>
+    <string name="distance">Khoảng cách</string>
+    <string name="total">Tổng cộng</string>
+    <string name="cancel">Hủy</string>
+    <string name="confirm">Xác nhận</string>
+
 
 
 
@@ -50,4 +92,81 @@
         <item>Dịch vụ thêm</item>
     </string-array>
 
+    <string-array name="provinces">
+        <item>An Giang</item>
+        <item>Kon Tum</item>
+        <item>Bà Rịa - Vũng Tàu</item>
+        <item>Bắc Giang</item>
+        <item>Lâm Đồng</item>
+        <item>Bắc Kạn</item>
+        <item>Lạng Sơn</item>
+        <item>Bạc Liêu</item>
+        <item>Lào Cai</item>
+        <item>Bắc Ninh</item>
+        <item>Long An</item>
+        <item>Bến Tre</item>
+        <item>Nam Định</item>
+        <item>Bình Định</item>
+        <item>Nghệ An</item>
+        <item>Bình Dương</item>
+        <item>Ninh Bình</item>
+        <item>Bình Phước</item>
+        <item>Ninh Thuận</item>
+        <item>Bình Thuận</item>
+        <item>Phú Thọ</item>
+        <item>Cà Mau</item>
+        <item>Phú Yên</item>
+        <item>Cần Thơ</item>
+        <item>Quảng Bình</item>
+        <item>Cao Bằng</item>
+        <item>Quảng Nam</item>
+        <item>Đà Nẵng</item>
+        <item>Quảng Ngãi</item>
+        <item>Đắk Lắk</item>
+        <item>Quảng Ninh</item>
+        <item>Đắk Nông</item>
+        <item>Quảng Trị</item>
+        <item>Điện Biên</item>
+        <item>Sóc Trăng</item>
+        <item>Đồng Nai</item>
+        <item>Sơn La</item>
+        <item>Đồng Tháp</item>
+        <item>Tây Ninh</item>
+        <item>Gia Lai</item>
+        <item>Thái Bình</item>
+        <item>Hà Giang</item>
+        <item>Thái Nguyên</item>
+        <item>Hà Nam</item>
+        <item>Thanh Hóa</item>
+        <item>Hà Nội</item>
+        <item>Thừa Thiên</item>
+        <item>Hà Tĩnh</item>
+        <item>Tiền Giang</item>
+        <item>Hải Dương</item>
+        <item>TP Hồ Chí Minh</item>
+        <item>Hải Phòng</item>
+        <item>Trà Vinh</item>
+        <item>Hậu Giang</item>
+        <item>Tuyên Quang</item>
+        <item>Hòa Bình</item>
+        <item>Vĩnh Long</item>
+        <item>Hưng Yên</item>
+        <item>Vĩnh Phúc</item>
+        <item>Khánh Hòa</item>
+        <item>Yên Bái</item>
+        <item>Kiên Giang</item>
+    </string-array>
+
+    <string-array name="carModels">
+        <item>0.5 tấn</item>
+        <item>1 tấn</item>
+        <item>1.5 tấn</item>
+        <item>2 tấn</item>
+        <item>3 tấn</item>
+        <item>5 tấn</item>
+        <item>7 tấn</item>
+        <item>10 tấn</item>
+        <item>13 tấn</item>
+        <item>16 tấn</item>
+    </string-array>
 </resources>

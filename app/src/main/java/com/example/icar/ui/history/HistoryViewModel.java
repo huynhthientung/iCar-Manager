@@ -1,4 +1,4 @@
-package com.example.icar.home_ui.history;
+package com.example.icar.ui.history;
 
 import androidx.lifecycle.ViewModel;
 

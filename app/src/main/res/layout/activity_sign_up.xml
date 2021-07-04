@@ -18,7 +18,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
-        android:text="Đăng ký\ntài khoảng"
+        android:text="Đăng ký\ntài khoản"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"

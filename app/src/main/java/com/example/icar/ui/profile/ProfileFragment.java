@@ -1,4 +1,4 @@
-package com.example.icar.home_ui.profile;
+package com.example.icar.ui.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +19,6 @@ import com.bumptech.glide.Glide;
 import com.example.icar.model.Customer;
 import com.example.icar.activity.UpdateProfileActivity;
 import com.example.icar.databinding.FragmentProfileBinding;
-import com.example.icar.model.Manager;
 import com.example.icar.model.Utils;
 import com.google.firebase.FirebaseApp;
 
@@ -50,15 +49,15 @@ public class ProfileFragment extends Fragment {
 
         progressBar.setVisibility(View.VISIBLE);
         String uid = Utils.getInstance().getUid();
-        Manager manager = Utils.getInstance().getManager(); // Select * from Customers where UID = KEY
-        name = manager.full_name;
+        Customer customer = Utils.getInstance().getCustomer(); // Select * from Customers where UID = KEY
+        name = customer.full_name;
         try {
-            txtName.setText(txtName.getText().toString() + manager.full_name);
-            txtEmail.setText(txtEmail.getText().toString() + manager.email);
-            txtPhone.setText(txtPhone.getText().toString() + manager.phone);
-            txtAddress.setText(txtAddress.getText().toString() + manager.address);
-            txtBirthday.setText(txtBirthday.getText().toString() + manager.birthday);
-            txtGender.setText(txtGender.getText().toString() + (manager.gender ? "Nam" : "Nu"));
+            txtName.setText(txtName.getText().toString() + customer.full_name);
+            txtEmail.setText(txtEmail.getText().toString() + customer.email);
+            txtPhone.setText(txtPhone.getText().toString() + customer.phone);
+            txtAddress.setText(txtAddress.getText().toString() + customer.address);
+            txtBirthday.setText(txtBirthday.getText().toString() + customer.birthday);
+            txtGender.setText(txtGender.getText().toString() + (customer.gender ? "Nam" : "Nu"));
             Glide.with(getContext()).asBitmap().load(Utils.getInstance().getPhotoUrl()).into(igmAvatar);
         } catch (Exception e) {
             Log.d("AAA", e.getMessage());

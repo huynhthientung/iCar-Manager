@@ -23,7 +23,6 @@ import android.widget.Toast;
 
 import com.example.icar.R;
 import com.example.icar.model.Customer;
-import com.example.icar.model.Manager;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -63,7 +62,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
-        getSupportActionBar().setTitle("Update Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mAuth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
@@ -108,9 +106,9 @@ public class UpdateProfileActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show();
         } else {
-            Manager manager = new Manager(uid, name, email, phone, address, birthday, gender);
+            Customer customer = new Customer(uid, name, email, phone, address, birthday, gender);
             databaseReference = FirebaseDatabase.getInstance().getReference();
-            databaseReference.child("Managers").child(uid).setValue(manager)
+            databaseReference.child("Customers").child(uid).setValue(customer)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull @NotNull Task<Void> task) {

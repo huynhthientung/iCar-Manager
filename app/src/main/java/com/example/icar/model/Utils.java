@@ -22,7 +22,6 @@ public class Utils {
 
     private static Utils instance;
     private static Customer customer;
-    private static Manager manager;
     private static ArrayList<Service> serviceArrayList = null;
     private static ArrayList<ExtraService> extraServiceArrayList = null;
 //    private static ArrayList<Car> carArrayList;
@@ -31,6 +30,7 @@ public class Utils {
     private final DatabaseReference root = FirebaseDatabase.getInstance().getReference();
     private static String uid = null;
     private static Uri photoUrl = null;
+    private static String driverName = "";
 
     private Utils() {
         if (null == serviceArrayList) {
@@ -50,24 +50,7 @@ public class Utils {
         if (null == customer) {
             initCustomer();
         }
-        if (null == manager) {
-            initManager();
-        }
         //TODO: carArrayList
-    }
-
-    private void initManager() {
-        root.child("Managers").child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                manager = snapshot.getValue(Manager.class);
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-            }
-        });
     }
 
     private void initCustomer() {
@@ -166,10 +149,38 @@ public class Utils {
         return customer;
     }
 
-    public Manager getManager() {
-        return manager;
-    }
+    public String getDriverName(String uid) {
+        root.child("Drivers").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+                Driver driver = snapshot.getValue(Driver.class);
+                if (driver.uid.equals(uid)) {
+                    driverName = driver.full_name;
+                }
+            }
 
+            @Override
+            public void onChildChanged(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull @NotNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+        return driverName;
+    }
     public static Utils getInstance() {
         if (null == instance) {
             instance = new Utils();
