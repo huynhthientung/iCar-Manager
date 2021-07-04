@@ -30,6 +30,7 @@
     <string name="title_ForgetPassword">Quên mật khẩu</string>
     <string name="title_UpdateProfile">Cập nhật thông tin cá nhân</string>
     <string name="title_Manage_Transaction">Danh sách đơn hàng</string>
+    <string name="title_manage_transaction">Xử lý đơn hàng</string>
 
     <string name="car_booking">Tiến hành đặt xe</string>
     <string name="car_searching">Tra cứu xe</string>

@@ -1,5 +1,7 @@
 package com.example.icar.model;
 
+import java.io.Serializable;
+
 public class Bookings {
     public String bookingKey;
     public String uid;

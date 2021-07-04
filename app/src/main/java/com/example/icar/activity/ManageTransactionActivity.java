@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -30,7 +33,7 @@ public class ManageTransactionActivity extends AppCompatActivity {
     private ArrayList<String> bookingsArrayList;
     private DatabaseReference root;
     private ArrayAdapter adapter;
-
+    private Bookings bookings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +48,7 @@ public class ManageTransactionActivity extends AppCompatActivity {
         root.child("Bookings").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
-                Bookings bookings = snapshot.getValue(Bookings.class);
+                bookings = snapshot.getValue(Bookings.class);
                 if (bookings.driverId.equals("") || bookings.carId.equals("")) {
                     bookingsArrayList.add(bookings.bookingKey);
                     adapter.notifyDataSetChanged();
@@ -75,7 +78,11 @@ public class ManageTransactionActivity extends AppCompatActivity {
         lvBookings.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ManageTransactionActivity.this, "" + bookingsArrayList.get(position), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ManageTransactionActivity.this, "" + bookingsArrayList.get(position), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ManageTransactionActivity.this, ProcessTransactionActivity.class);
+                intent.putExtra("BOOKINGS", new Gson().toJson(bookings));
+                startActivity(intent);
+                finish();
             }
         });
     }
