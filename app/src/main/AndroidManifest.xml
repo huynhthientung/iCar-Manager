@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ICar">
         <activity
+            android:name=".activity.CarSearchingActivity"
+            android:label="@string/title_ListCar"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
             android:name=".activity.BookingActivity"
             android:label="@string/title_Booking"
             android:theme="@style/Theme.ICarActionBar" />
@@ -34,8 +38,8 @@
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.ICar.NoActionBar" />
         <activity
-            android:label="@string/title_ForgetPassword"
             android:name=".activity.ForgetPasswordActivity"
+            android:label="@string/title_ForgetPassword"
             android:theme="@style/Theme.ICarActionBar" />
         <activity
             android:name=".activity.UpdateProfileActivity"

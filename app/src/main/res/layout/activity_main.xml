@@ -19,7 +19,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="116dp"
         android:layout_marginEnd="8dp"
-        android:text="Welcome\nto iCar"
+        android:text="Welcome\nto iCar-Mangager"
         android:textColor="@android:color/white"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -145,28 +145,15 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_centerInParent="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:onClick="OpenSignupPage"
-                android:padding="15dp"
-                android:text="@string/sign_up"
-                android:textSize="18sp"
-                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_centerInParent="true"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="114dp"
+                android:layout_marginRight="114dp"
                 android:onClick="OpenForgotPasswordPage"
                 android:padding="15dp"
                 android:text="@string/forgot_password"

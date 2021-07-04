@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">iCar-Customer</string>
+    <string name="app_name">iCar-Manager</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -10,12 +10,14 @@
 
     <string name="menu_home">Trang chủ</string>
     <string name="menu_profile">Thông tin cá nhân</string>
+    <string name="menu_addcar">Thêm xe vào hệ thống</string>
     <string name="menu_transaction">Giao dịch</string>
     <string name="menu_history">Lịch sử</string>
     <string name="menu_share">Chia sẻ</string>
     <string name="menu_send">Gửi email</string>
     <string name="menu_logout">Đăng xuất</string>
     <string name="menu_feedback">Góp ý</string>
+    <string name="menu_add_car">Thêm xe vào hệ thống</string>
     <string name="communication_title">Mở rộng</string>
 
     <string name="title_Feedback">Gửi đánh giá</string>
@@ -23,11 +25,13 @@
     <string name="title_AboutUs">Về chúng tôi</string>
     <string name="title_ServiceLookup">Tra cứu dịch vụ</string>
     <string name="title_Booking">Đặt xe</string>
+    <string name="title_ListCar">Danh sách xe</string>
     <string name="title_ForgetPassword">Quên mật khẩu</string>
     <string name="title_UpdateProfile">Cập nhật thông tin cá nhân</string>
 
     <string name="car_booking">Tiến hành đặt xe</string>
     <string name="car_searching">Tra cứu xe</string>
+    <string name="manage_transaction">Quản lý đơn hàng</string>
     <string name="service_searching">Tra cứu dịch vụ</string>
     <string name="about_license">Chính sách vận chuyển</string>
     <string name="about_us">Về chúng tôi</string>
@@ -83,8 +87,6 @@
     <string name="total">Tổng cộng</string>
     <string name="cancel">Hủy</string>
     <string name="confirm">Xác nhận</string>
-
-
 
 
     <string-array name="options_service_array">
@@ -169,4 +171,6 @@
         <item>13 tấn</item>
         <item>16 tấn</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

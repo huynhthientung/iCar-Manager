@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -14,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.icar.activity.AboutUsActivity;
 import com.example.icar.activity.BookingActivity;
+import com.example.icar.activity.CarSearchingActivity;
 import com.example.icar.activity.LicenseActivity;
 import com.example.icar.R;
 import com.example.icar.activity.ServiceActivity;
@@ -23,7 +23,7 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private ImageView imageView;
-    private CardView cardView_booking, cardView_service, cardView_license, cardView_about;
+    private CardView cardView_car_searching, cardView_manage_transaction, cardView_license, cardView_about;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class HomeFragment extends Fragment {
 
         // init controls
         cardView_about = binding.cardViewAboutUs;
-        cardView_booking = binding.cardViewBooking;
         cardView_license = binding.cardViewLicense;
-        cardView_service = binding.cardViewServiceSearching;
-        
+        cardView_car_searching = binding.cardViewCarSearching;
+        cardView_manage_transaction = binding.cardViewManageTransaction;
+
         // handle events
         cardView_about.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,10 +47,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        cardView_service.setOnClickListener(new View.OnClickListener() {
+        cardView_manage_transaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                service_onClick();
+                manage_transaction_onClick();
             }
         });
 
@@ -61,18 +61,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        cardView_booking.setOnClickListener(new View.OnClickListener() {
+        cardView_car_searching.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                carBooking_onClick();
+                carSearching_onClick();
             }
         });
         return root;
     }
 
-    private void carBooking_onClick() {
+    private void carSearching_onClick() {
 //        Toast.makeText(getContext(), "Car Booking", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getContext(), BookingActivity.class));
+        startActivity(new Intent(getContext(), CarSearchingActivity.class));
     }
 
     private void license_onClick() {
@@ -80,7 +80,7 @@ public class HomeFragment extends Fragment {
         startActivity(new Intent(getContext(), LicenseActivity.class));
     }
 
-    private void service_onClick() {
+    private void manage_transaction_onClick() {
 //        Toast.makeText(getContext(), "Service", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(getContext(), ServiceActivity.class));
     }

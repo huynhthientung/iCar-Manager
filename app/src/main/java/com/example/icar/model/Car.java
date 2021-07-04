@@ -22,13 +22,9 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "BienSo='" + BienSo + '\'' +
-                ", Loaixe=" + Loaixe +
-                ", TrangThai=" + TrangThai +
-                ", MauSac='" + MauSac + '\'' +
-                ", HangXe='" + HangXe + '\'' +
-                ", CarPhotoUrl='" + CarPhotoUrl + '\'' +
-                '}';
+        return "Biển số: " + BienSo + '\n' +
+                "Màu sắc: '" + MauSac + '\n' +
+                "Hãng xe: " + HangXe + '\n' +
+                "Trọng tải: " + Loaixe.TrongTai / 1000 + " tấn ";
     }
 }

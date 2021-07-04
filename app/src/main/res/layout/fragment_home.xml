@@ -21,7 +21,7 @@
         tools:src="@drawable/xe" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView_booking"
+        android:id="@+id/cardView_manage_transaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -42,14 +42,14 @@
             android:layout_height="60dp"
             android:gravity="center"
             android:textSize="25sp"
-            android:text="@string/car_booking"
+            android:text="@string/manage_transaction"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView_service_searching"
+        android:id="@+id/cardView_car_searching"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -62,14 +62,14 @@
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_booking">
+        app:layout_constraintTop_toBottomOf="@+id/cardView_manage_transaction">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="@string/service_searching"
+            android:text="@string/car_searching"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -89,7 +89,7 @@
         app:cardElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView_service_searching">
+        app:layout_constraintTop_toBottomOf="@+id/cardView_car_searching">
 
         <TextView
             android:id="@+id/textView4"

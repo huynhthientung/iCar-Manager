@@ -24,7 +24,7 @@ public class Utils {
     private static Customer customer;
     private static ArrayList<Service> serviceArrayList = null;
     private static ArrayList<ExtraService> extraServiceArrayList = null;
-//    private static ArrayList<Car> carArrayList;
+    private static ArrayList<Car> carArrayList;
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private final FirebaseUser mUser = mAuth.getCurrentUser();
     private final DatabaseReference root = FirebaseDatabase.getInstance().getReference();
@@ -50,7 +50,40 @@ public class Utils {
         if (null == customer) {
             initCustomer();
         }
-        //TODO: carArrayList
+        if (null == carArrayList) {
+            carArrayList = new ArrayList<>();
+            initCarArrayList();
+        }
+    }
+
+    private void initCarArrayList() {
+        root.child("Car").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+                Car car = snapshot.getValue(Car.class);
+                carArrayList.add(car);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull @NotNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void initCustomer() {
@@ -127,7 +160,9 @@ public class Utils {
         });
     }
 
-
+    public ArrayList<Car> getCarArrayList() {
+        return carArrayList;
+    }
 
     public ArrayList<Service> getServiceArrayList() {
         return serviceArrayList;
