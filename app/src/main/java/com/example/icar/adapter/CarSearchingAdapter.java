@@ -5,7 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.icar.R;
 import com.example.icar.model.Car;
+import com.example.icar.model.Utils;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -22,7 +29,7 @@ public class CarSearchingAdapter extends RecyclerView.Adapter<CarSearchingAdapte
 
     private Context context;
     private ArrayList<Car> carArrayList;
-
+    private DatabaseReference root = FirebaseDatabase.getInstance().getReference();
     public CarSearchingAdapter(Context context) {
         this.context = context;
     }
@@ -48,6 +55,31 @@ public class CarSearchingAdapter extends RecyclerView.Adapter<CarSearchingAdapte
         } else {
             holder.imgStatus.setImageResource(R.drawable.greendot);
         }
+        holder.layout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+//                Toast.makeText(context, "Long clicked " + position, Toast.LENGTH_SHORT).show();
+                holder.txtDelete.setVisibility(View.VISIBLE);
+                return false;
+            }
+        });
+        holder.txtDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                root.child("Car").child(carArrayList.get(position).BienSo).removeValue()
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull @NotNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    ArrayList<Car> cars = Utils.getInstance().getCarArrayList();
+                                    carArrayList.remove(position);
+                                    Utils.getInstance().setCarArrayList(carArrayList);
+                                    notifyDataSetChanged();
+                                }
+                            }
+                        });
+            }
+        });
     }
 
     @Override
@@ -58,12 +90,15 @@ public class CarSearchingAdapter extends RecyclerView.Adapter<CarSearchingAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imgCar, imgStatus;
-        private TextView txtCarDetails;
+        private TextView txtCarDetails, txtDelete;
+        private LinearLayout layout;
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             imgCar = itemView.findViewById(R.id.imageView_car);
             txtCarDetails = itemView.findViewById(R.id.textView_car_details);
             imgStatus = itemView.findViewById(R.id.imageView_status);
+            layout = itemView.findViewById(R.id.mLayout);
+            txtDelete = itemView.findViewById(R.id.textView_Delete);
         }
     }
 }

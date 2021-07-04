@@ -122,7 +122,6 @@ public class AddCarFragment extends Fragment {
         } else {
             CarModel carModel =  new CarModel(String.valueOf(calendar.getTimeInMillis()),  Integer.parseInt(edtTrongTai.getText().toString()), "5m", "5m", "5m");
             Car car = new Car(bienSo, carModel, false, mauSac, hangXe, urlCar);
-
             databaseReference = FirebaseDatabase.getInstance().getReference();
             databaseReference.child("Car").child(car.BienSo).setValue(car)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -132,9 +131,9 @@ public class AddCarFragment extends Fragment {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(getContext(), "Update profile successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getContext(), HomeActivity.class));
-                                ArrayList<Car> cars = Utils.getInstance().getCarArrayList();
-                                cars.add(car);
-                                Utils.getInstance().setCarArrayList(cars);
+//                                ArrayList<Car> cars = Utils.getInstance().getCarArrayList();
+//                                cars.add(car);
+//                                Utils.getInstance().setCarArrayList(cars);
                             } else {
                                 progressBar.setVisibility(View.GONE);
                                 Toast.makeText(getContext(), "Update profile unsuccessfully", Toast.LENGTH_SHORT).show();
