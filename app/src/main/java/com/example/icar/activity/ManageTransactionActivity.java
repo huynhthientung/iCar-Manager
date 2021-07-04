@@ -50,7 +50,7 @@ public class ManageTransactionActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
                 bookings = snapshot.getValue(Bookings.class);
-                if (bookings.driverId.equals("") || bookings.carId.equals("")) {
+                if (bookings.driverId.equals("") || bookings.carId.equals("") || !bookings.status) {
                     bookingsArrayList.add(bookings.bookingKey);
                     adapter.notifyDataSetChanged();
                 }
@@ -81,7 +81,8 @@ public class ManageTransactionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(ManageTransactionActivity.this, "" + bookingsArrayList.get(position), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(ManageTransactionActivity.this, ProcessTransactionActivity.class);
-                intent.putExtra(TAG, new Gson().toJson(bookings));
+//                intent.putExtra(TAG, new Gson().toJson(bookings));
+                intent.putExtra(TAG, bookingsArrayList.get(position));
                 startActivity(intent);
                 finish();
             }

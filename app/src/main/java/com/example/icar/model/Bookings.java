@@ -50,6 +50,18 @@ public class Bookings {
         this.driverId = "";
     }
 
+    public void setDriverId(String driverId) {
+        this.driverId = driverId;
+    }
+
+    public void setCarId(String carId) {
+        this.carId = carId;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Tài xế: " + Utils.getInstance().getDriverName(driverId) + "\n" +
@@ -62,6 +74,7 @@ public class Bookings {
                 "Người nhận: " + receiverName + '\n' +
                 "Số điện thoại người nhận: " + receiverPhone + '\n' +
                 "Ghi chú: " + receiverNote + '\n' +
+                "Trọng tải xe: " + (TrongTaiXe < 1000 ? "0.5" : (TrongTaiXe / 1000)) + " tấn" + '\n' +
                 "Tổng cộng: " + total + " vnd " + "\n";
     }
 }
