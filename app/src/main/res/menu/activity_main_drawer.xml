@@ -18,6 +18,10 @@
             android:id="@+id/nav_addcar"
             android:icon="@drawable/ic_car"
             android:title="@string/menu_add_car" />
+        <item
+            android:id="@+id/nav_getfeedback"
+            android:icon="@drawable/ic_feedback"
+            android:title="@string/menu_get_feedback" />
 
     </group>
 
@@ -32,10 +36,7 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_send"
                 android:title="@string/menu_send" />
-            <item
-                android:id="@+id/nav_feedback"
-                android:icon="@drawable/ic_feedback"
-                android:title="@string/menu_feedback" />
+
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_logout"

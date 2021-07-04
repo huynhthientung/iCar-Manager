@@ -26,6 +26,7 @@ public class Utils {
     private static Customer customer;
     private static ArrayList<Service> serviceArrayList = null;
     private static ArrayList<ExtraService> extraServiceArrayList = null;
+    private static ArrayList<Customer> customerArrayList = null;
     private static ArrayList<Car> carArrayList;
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private final FirebaseUser mUser = mAuth.getCurrentUser();
@@ -43,6 +44,10 @@ public class Utils {
             extraServiceArrayList = new ArrayList<>();
             initExtraServiceArrayList();
         }
+        if (null == customerArrayList) {
+            customerArrayList = new ArrayList<>();
+            initCustomerArrayList();
+        }
         if (null == uid) {
             uid = mUser.getUid();
         }
@@ -56,6 +61,36 @@ public class Utils {
             carArrayList = new ArrayList<>();
             initCarArrayList();
         }
+    }
+
+    private void initCustomerArrayList() {
+        root.child("Customers").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+                Customer mCustomer = snapshot.getValue(Customer.class);
+                customerArrayList.add(mCustomer);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull @NotNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void initCarArrayList() {
@@ -165,6 +200,10 @@ public class Utils {
 
     public ArrayList<Car> getCarArrayList() {
         return carArrayList;
+    }
+
+    public ArrayList<Customer> getCustomerArrayList() {
+        return customerArrayList;
     }
 
     public void setCarArrayList(ArrayList<Car> carArrayList) {

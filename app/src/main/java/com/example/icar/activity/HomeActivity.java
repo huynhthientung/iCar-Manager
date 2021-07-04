@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_addcar, R.id.nav_transaction)
+                R.id.nav_home, R.id.nav_addcar, R.id.nav_transaction, R.id.nav_getfeedback)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
@@ -99,14 +99,7 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             }
         });
-        navigationView.getMenu().findItem(R.id.nav_feedback).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                Toast.makeText(HomeActivity.this, "Feedback", Toast.LENGTH_SHORT).show();
-                sendFeedback();
-                return false;
-            }
-        });
+
 
 //        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 //            @Override

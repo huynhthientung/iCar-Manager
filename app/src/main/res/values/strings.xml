@@ -18,6 +18,7 @@
     <string name="menu_logout">Đăng xuất</string>
     <string name="menu_feedback">Góp ý</string>
     <string name="menu_add_car">Thêm xe vào hệ thống</string>
+    <string name="menu_get_feedback">Tra cứu phản hồi, góp ý </string>
     <string name="communication_title">Mở rộng</string>
 
     <string name="title_Feedback">Gửi đánh giá</string>
