@@ -46,8 +46,10 @@ public class ManageTransactionActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
                 Bookings bookings = snapshot.getValue(Bookings.class);
-                bookingsArrayList.add(bookings.bookingKey);
-                adapter.notifyDataSetChanged();
+                if (bookings.driverId.equals("") || bookings.carId.equals("")) {
+                    bookingsArrayList.add(bookings.bookingKey);
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
