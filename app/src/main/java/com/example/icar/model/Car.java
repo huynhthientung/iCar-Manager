@@ -23,7 +23,7 @@ public class Car {
     @Override
     public String toString() {
         return "Biển số: " + BienSo + '\n' +
-                "Màu sắc: '" + MauSac + '\n' +
+                "Màu sắc: " + MauSac + '\n' +
                 "Hãng xe: " + HangXe + '\n' +
                 "Trọng tải: " + Loaixe.TrongTai / 1000 + " tấn ";
     }

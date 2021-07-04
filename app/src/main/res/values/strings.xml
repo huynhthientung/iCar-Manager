@@ -87,6 +87,11 @@
     <string name="total">Tổng cộng</string>
     <string name="cancel">Hủy</string>
     <string name="confirm">Xác nhận</string>
+    <string name="car_id">Biển số xe </string>
+    <string name="color">Màu sắc</string>
+    <string name="car_model_name">Hãng xe</string>
+    <string name="weight">Trọng tải</string>
+    <string name="add_car">Thêm vào cơ sở dữ liệu </string>
 
 
     <string-array name="options_service_array">
