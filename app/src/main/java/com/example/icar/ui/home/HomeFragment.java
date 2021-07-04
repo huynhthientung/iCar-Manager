@@ -16,6 +16,7 @@ import com.example.icar.activity.BookingActivity;
 import com.example.icar.activity.CarSearchingActivity;
 import com.example.icar.activity.LicenseActivity;
 import com.example.icar.R;
+import com.example.icar.activity.ManageTransactionActivity;
 import com.example.icar.activity.ServiceActivity;
 import com.example.icar.databinding.FragmentHomeBinding;
 
@@ -82,7 +83,7 @@ public class HomeFragment extends Fragment {
 
     private void manage_transaction_onClick() {
 //        Toast.makeText(getContext(), "Service", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getContext(), ServiceActivity.class));
+        startActivity(new Intent(getContext(), ManageTransactionActivity.class));
     }
 
     private void about_onClick() {

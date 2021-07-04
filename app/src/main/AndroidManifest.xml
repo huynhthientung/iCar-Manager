@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ICar">
         <activity
+            android:name=".activity.ManageTransactionActivity"
+            android:label="@string/title_Manage_Transaction"
+            android:theme="@style/Theme.ICarActionBar" />
+        <activity
             android:name=".activity.CarSearchingActivity"
             android:label="@string/title_ListCar"
             android:theme="@style/Theme.ICarActionBar" />
