@@ -27,7 +27,8 @@ public class Utils {
     private static ArrayList<Service> serviceArrayList = null;
     private static ArrayList<ExtraService> extraServiceArrayList = null;
     private static ArrayList<Customer> customerArrayList = null;
-    private static ArrayList<Car> carArrayList;
+    private static ArrayList<Car> carArrayList = null;
+    private static ArrayList<Driver> driverArrayList = null;
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private final FirebaseUser mUser = mAuth.getCurrentUser();
     private final DatabaseReference root = FirebaseDatabase.getInstance().getReference();
@@ -61,6 +62,40 @@ public class Utils {
             carArrayList = new ArrayList<>();
             initCarArrayList();
         }
+        if (null == driverArrayList) {
+            driverArrayList = new ArrayList<>();
+            initDriverArrayList();
+        }
+    }
+
+    private void initDriverArrayList() {
+        root.child("Drivers").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+                Driver driver = snapshot.getValue(Driver.class);
+                driverArrayList.add(driver);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull @NotNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void initCustomerArrayList() {
@@ -196,6 +231,10 @@ public class Utils {
 
             }
         });
+    }
+
+    public ArrayList<Driver> getDriverArrayList() {
+        return driverArrayList;
     }
 
     public ArrayList<Car> getCarArrayList() {
