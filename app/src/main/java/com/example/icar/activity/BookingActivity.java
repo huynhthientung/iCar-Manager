@@ -47,6 +47,7 @@ public class BookingActivity extends AppCompatActivity {
     private TextView txtDistance, txtTotal;
     private Button btnCancel, btnConfirm;
     private ProgressBar progressBar;
+    private int TrongTaiXe = 500;
     private int distance = 10, total = 0, price = 0;
 
     private boolean IS_SOURCE_ADDRESS_FILLED = false;
@@ -118,6 +119,39 @@ public class BookingActivity extends AppCompatActivity {
                 price = serviceArrayList.get(position).pricePerKm;
                 total = distance * price;
                 updateTotalAndDistance();
+                switch (position) {
+                    case 0:
+                        TrongTaiXe = 500;
+                        break;
+                    case 1:
+                        TrongTaiXe = 1000;
+                        break;
+                    case 2:
+                        TrongTaiXe = 1500;
+                        break;
+                    case 3:
+                        TrongTaiXe = 2000;
+                        break;
+                    case 4:
+                        TrongTaiXe = 3000;
+                        break;
+                    case 5:
+                        TrongTaiXe = 5000;
+                        break;
+                    case 6:
+                        TrongTaiXe = 7000;
+                        break;
+                    case 7:
+                        TrongTaiXe = 10000;
+                        break;
+                    case 8:
+                        TrongTaiXe = 13000;
+                        break;
+                    case 9:
+                        TrongTaiXe = 16000;
+                        break;
+
+                }
 //                Toast.makeText(BookingActivity.this, "" + price, Toast.LENGTH_SHORT).show();
             }
 
@@ -220,7 +254,7 @@ public class BookingActivity extends AppCompatActivity {
             destination += ", " + provinces[idDestination];
             Bookings booking = new Bookings(bookingKey, uid, dateCreated, source, destination, departure, arrival,
                     receiverName, receiverPhone, receiverNote, checkBoxESK01.isChecked(), checkBoxESK02.isChecked(),
-                    checkBoxESK03.isChecked(), checkBoxESK04.isChecked(), total);
+                    checkBoxESK03.isChecked(), checkBoxESK04.isChecked(), total, TrongTaiXe);
             root.child("Bookings").child(bookingKey).setValue(booking)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

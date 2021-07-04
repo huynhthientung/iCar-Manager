@@ -1,7 +1,5 @@
 package com.example.icar.model;
 
-import java.io.Serializable;
-
 public class Bookings {
     public String bookingKey;
     public String uid;
@@ -21,6 +19,7 @@ public class Bookings {
     public boolean isESK04;
     public int total;
     public boolean status;
+    public int TrongTaiXe;
 
     public Bookings() {
     }
@@ -28,7 +27,7 @@ public class Bookings {
     public Bookings(String bookingKey, String uid, String dateCreated, String source, String destination,
                     String dateDepart, String dateArrival, String receiverName, String receiverPhone,
                     String receiverNote, boolean isESK01, boolean isESK02, boolean isESK03, boolean isESK04,
-                    int total) {
+                    int total, int trongTaiXe) {
         this.bookingKey = bookingKey;
         this.uid = uid;
         this.dateCreated = dateCreated;
@@ -44,6 +43,7 @@ public class Bookings {
         this.isESK03 = isESK03;
         this.isESK04 = isESK04;
         this.total = total;
+        this.TrongTaiXe = trongTaiXe;
 
         this.status = false;
         this.carId = "";

@@ -71,7 +71,7 @@ public class ProcessTransactionActivity extends AppCompatActivity {
         cars = new ArrayList<>();
         drivers = new ArrayList<>();
         for (Car car : carArrayList) {
-            if (!car.TrangThai) {
+            if (!car.TrangThai && car.Loaixe.TrongTai == bookings.TrongTaiXe) {
                 cars.add(car.BienSo);
             }
         }
