@@ -101,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 }
                             });
 
-                            Toast.makeText(SignUpActivity.this, "Successfully sign-up", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "Đăng ký thành công ", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignUpActivity.this, UpdateProfileActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putString(KEY, name);
