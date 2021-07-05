@@ -49,7 +49,7 @@ public class TransactionFragment extends Fragment {
             @Override
             public void onChildAdded(@NonNull @NotNull DataSnapshot snapshot, @Nullable @org.jetbrains.annotations.Nullable String previousChildName) {
                 Bookings booking = snapshot.getValue(Bookings.class);
-                if (booking.uid.equals(Utils.getInstance().getUid())) {
+                if (booking.status) {
                     transactions.add(booking.toString());
                 }
                 adapter.notifyDataSetChanged();
