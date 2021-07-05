@@ -65,8 +65,7 @@ public class ProcessTransactionActivity extends AppCompatActivity {
 //        }
         bookingKey = getIntent().getExtras().getString(TAG);
 //        Toast.makeText(this, "" + bookings.toString(), Toast.LENGTH_SHORT).show();
-        Utils.getInstance().setCarArrayList(null);
-        Utils.getInstance().setDriverArrayList(null);
+
         carArrayList = Utils.getInstance().getCarArrayList();
         driverArrayList = Utils.getInstance().getDriverArrayList();
         txtDetails = findViewById(R.id.textView_car_details);
@@ -107,15 +106,16 @@ public class ProcessTransactionActivity extends AppCompatActivity {
                 for (Car car : carArrayList) {
                     if (!car.TrangThai && car.Loaixe.TrongTai == bookings.TrongTaiXe) {
                         cars.add(car.BienSo);
+                        adapterCar.notifyDataSetChanged();
                     }
                 }
-                adapterCar.notifyDataSetChanged();
                 for (Driver driver : driverArrayList) {
                     if (!driver.TrangThai) {
                         drivers.add(driver.full_name + "-" + driver.uid);
+                        adapterDriver.notifyDataSetChanged();
                     }
                 }
-                adapterDriver.notifyDataSetChanged();
+
             }
 
             @Override
@@ -138,6 +138,7 @@ public class ProcessTransactionActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         root.child("Drivers").child(spliter[1]).child("TrangThai").setValue(true);
+                                        root.child("Car").child(bookings.carId).child("TrangThai").setValue(true);
                                         startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                         finish();
                                     } else {
@@ -149,7 +150,6 @@ public class ProcessTransactionActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(ProcessTransactionActivity.this, "Vui lòng chọn xe và tài xế !", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
